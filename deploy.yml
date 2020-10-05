@@ -1,0 +1,14 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+   - name: "download from nexus" 
+     shell: curl -X GET -o ./my.zip --user admin:kalyan http://3.14.255.47:8081/repository/myrepo/test.zip
+   - name: "install unzip"
+     yum:
+      name: unzip
+      state: present
+   - name: "unzip"
+     shell: unzip ./my.zip -d /var/www/html	
+   - name: "restart httpd"
+     shell: systemctl restart httpd"

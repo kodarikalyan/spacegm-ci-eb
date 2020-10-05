@@ -1,0 +1,30 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+   - name: "install vim"
+     yum:
+        name: vim
+        state: present
+   - name: "install git"
+     yum:
+        name: git
+        state: present
+   - name: "uninstall vim"
+     yum:
+        name: vim
+        state: absent
+   - name: "uninstall git"
+     yum:
+        name: git
+        state: absent
+   - name: "install httpd"
+     yum:
+        name: httpd
+        state: present
+   - name: "Enable Apache on system reboot"
+     service: name=httpd enabled=yes
+     notify: restart apache
+  handlers:
+   - name: "restart apache"
+     service: name=httpd state=restarted

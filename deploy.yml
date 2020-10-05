@@ -11,4 +11,4 @@
    - name: "unzip"
      shell: unzip ./my.zip -d /var/www/html	
    - name: "restart httpd"
-     shell: systemctl restart httpd"
+     shell: systemctl restart httpd

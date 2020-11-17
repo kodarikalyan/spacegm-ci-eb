@@ -5,7 +5,7 @@ WORKDIR /source
 
 EXPOSE 80
 
-COPY .
+COPY . .
 
 
 WORKDIR /source

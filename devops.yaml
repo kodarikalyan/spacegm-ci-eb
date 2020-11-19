@@ -1,8 +1,8 @@
 ---
 - name: Deploy image
- hosts: "dev"
- ignore_errors: yes
- gather_facts: false
+  hosts: "dev"
+  ignore_errors: yes
+  gather_facts: false
 
  pre_tasks:
 

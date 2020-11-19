@@ -1,6 +1,7 @@
 ---
 - name: Deploy image
   hosts: "dev"
+  become: true
   ignore_errors: yes
   gather_facts: false
 

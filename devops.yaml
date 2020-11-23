@@ -8,7 +8,7 @@
   pre_tasks:
 
    - name: pull an image 13.58.189.222:8082/kdevops
-     shell: "docker login -u admin -p kalyan 3.135.185.58:8082/repository/kdevops/ && docker pull 3.135.185.58:8082/kdevops"
+     shell: "docker login -u admin -p kalyan 3.133.120.210:8082/repository/kdevops/ && docker pull 3.135.185.58:8082/kdevops"
      register: deployStatus
    - shell: "docker rm -f spacegame"
-   - shell: "docker run -d --name spacegame -p 8081:80  3.135.185.58:8082/kdevops"
+   - shell: "docker run -d --name spacegame -p 8081:80  3.133.120.210:8082/kdevops"
